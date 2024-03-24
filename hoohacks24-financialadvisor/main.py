@@ -81,8 +81,12 @@ class Message(BaseModel):
 
 @app.post("/chat")
 def quick_chat(message: Message):
+    raw_response = lhf.get_response(message.message)
     response = extract_json_from_string(lhf.get_response(message.message))
-    if response is None:
-        return {"message": "Something went wrong. Let's retry."}
+    if response is None or "":
+        split_text = raw_response.split('"advice":')
+        advice_text = split_text[1]
+        advice_text = advice_text[:-1]
+        return {"advice": advice_text}
     else:
         return response
