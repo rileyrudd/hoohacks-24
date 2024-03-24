@@ -8,6 +8,12 @@ import {useEffect, useState} from "react";
 import {chatbotdata} from '../types';
 function Chatbot(){
 
+    interface InitialMessages {
+        insights: string;
+        "financial health": string;
+        recommendation: string;
+    }
+
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
@@ -15,7 +21,8 @@ function Chatbot(){
         headers: { }
     };
 
-    const [initialMessages, setInitialMessages] = useState(""); // State to store initial messages
+    // const [initialMessages, setInitialMessages] = useState(""); // State to store initial messages
+    const [initialMessages, setInitialMessages] = useState<InitialMessages | null>(null);
 
 
     axios.request(config)
@@ -46,22 +53,19 @@ function Chatbot(){
                     TalkMoney
                 </div>
                 <div className="chat-messages" id="chatMessages">
-                    {/*<div className="chat-messages" id="chatMessages">*/}
-                    {/*    /!* Render initial messages *!/*/}
-                    {/*    {initialMessages && (*/}
-                    {/*        <>*/}
-                    {/*            <div className="bot-message">{initialMessages['insights']}</div>*/}
-                    {/*            <div className="bot-message">{initialMessages['financial health']}</div>*/}
-                    {/*            <div className="bot-message">{initialMessages['recommendation']}</div>*/}
-                    {/*        </>*/}
-                    {/*    )}*/}
-                    {/*</div>*/}
                     <div className="chat-messages" id="chatMessages">
                         {/* Render initial messages */}
                         {initialMessages && (
-                            <pre className="bot-message">{JSON.stringify(initialMessages, null, 2)}</pre>
+                            <>
+                                <div className="bot-message"><strong>Insights:</strong> {initialMessages.insights}</div>
+                                <div className="bot-message"><strong>Financial
+                                    Health:</strong> {initialMessages['financial health']}</div>
+                                <div className="bot-message">
+                                    <strong>Recommendation:</strong> {initialMessages.recommendation}</div>
+                            </>
                         )}
                     </div>
+
                 </div>
                 <div className="input-container">
                     <input type="text" className="input-box" id="userInput" placeholder="Let's talk money..."/>
