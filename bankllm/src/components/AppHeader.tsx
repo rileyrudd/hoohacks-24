@@ -19,9 +19,9 @@ function AppHeader(){
 
             </section>
             <section id="rightHeader">
-                <div className="header-dropdown">
+                <Link to="/chatbot">
                     <button className="button categories-button">Talk to my Money</button>
-                </div>
+                </Link>
                 <div className="header-dropdown">
                     <HeaderDropdown/>
                 </div>
