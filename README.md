@@ -11,12 +11,19 @@ Financial illiteracy poses a significant challenge in the United States, particu
 ## Feasibility
 While this project was done for a hack-a-thon submission, we believe this technology could be applied by banking services for a few reasons. 1 - consumers already have a trusting relationship with their bank and data collection/usage, no need to ask consumers to trust a new company. 2 - many banking services have taken steps to promote financial literacy, for example offering one on one appointments for financial advice. This technology takes it a step further by allowing many people access.
 
+## Tech Stack
 
-## Technologies Used
-- Frontend: HTML, CSS, React, Axios
-- Backend: Node.js [frontend host], Python, FastAPI
-- Database: MongoDB
+### Frontend
 
+-  HTML, CSS, React, Axios
+- Node.js [frontend host]
 
+### Backend
 
-
+- **Framework**: FastAPI
+- **Language**: Python
+- **Database**: MongoDB
+- **Libraries**:
+  - `langchain`: A library for natural language processing tasks.
+  - `predictionguard`: A tool for controlling access to AI models and APIs.
+  - `python-dotenv`: For managing environment variables from a `.env` file.
