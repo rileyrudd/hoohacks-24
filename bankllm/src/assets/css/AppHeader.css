@@ -16,10 +16,6 @@ header {
     font-size: 12px; /* Adjust the font size as needed */
 }
 
-/* #cartIcon {
-  width: 3%;
-  height: auto; /* Maintain the aspect ratio */
-
 .bookstore-link{
     width: 30%;
     height: auto;
@@ -34,28 +30,32 @@ header {
     width: 30%;
 }
 
-#midHeader{
-    min-width: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 40%
-    /*justify-content: space-evenly;*/
-}
 
 #icon{
     padding-left: 1rem;
 }
 
 #rightHeader{
+    width: 20%;
     min-width: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    float: right;
+}
+
+#mid{
+    display: flex;
+    width: 38%;
 }
 
 #categories-button{
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#llm-button{
     padding: 5px 10px;
     font-size: 1rem;
 }
