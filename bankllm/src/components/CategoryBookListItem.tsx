@@ -4,29 +4,48 @@ import "../types";
 import {BookItem} from "../types";
 
 const bookImageFileName =  (book:BookItem) => {
-  let name = book.title.toLowerCase();
-  name = name.replace(/ /g, "-");
-  name = name.replace(/'/g, "");
-  return `${name}.gif`;
+    let name = book.title.toLowerCase();
+    name = name.replace(/ /g, "-");
+    name = name.replace(/'/g, "");
+    return `${name}.gif`;
 };
 
-function CategoryBookListItem(props:BookItem) {
-return (
+function CategoryBookListItem() {
+    return (
 
-  <li className="book-box">
-   <div className="book-image">
-      <img src={require('../assets/images/books/' + bookImageFileName(props))}
-        alt="book.title"
-      />
-    </div>
-    <div className="book-title">{props.title }</div>
-    <div className="book-author">{ props.author }</div>
-    <div className="book-price">${ (props.price / 100).toFixed(2) }</div>
-    <button className="button">Add to Cart</button>
-      <div id="read-now">      {props.isReadNow && <button className="button" id="read-button">Read Now</button>}
-      </div>
-  </li>
+        <div className="book-lists">
+            <li className="book-box">
+                <div className="bank-text">
+                    <div>Checking ...5637</div>
+                    <div>1,765</div>
+                </div>
+                <button className="button">View Account</button>
+            </li>
+            <li className="book-box">
+                <div className="bank-text">
+                    <div>Checking ...2005</div>
+                    <div>12,356</div>
+                </div>
+                <button className="button">View Account</button>
+            </li>
+            <li className="book-box">
+                <div className="bank-text">
+                    <div>Checking ...4991</div>
+                    <div>19,765</div>
+                </div>
+                <button className="button">View Account</button>
+            </li>
+            <li className="book-box">
+                <div className="bank-text">
+                    <div>Checking ...3012</div>
+                    <div>13.62</div>
+                </div>
+                <button className="button">View Account</button>
+            </li>
+        </div>
 
-)
+
+    )
 }
+
 export default CategoryBookListItem;
