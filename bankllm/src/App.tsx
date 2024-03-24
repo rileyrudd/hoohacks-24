@@ -7,6 +7,7 @@ import {
   Route,
 } from "react-router-dom"
 import CategoryBookListItem from "./components/CategoryBookListItem";
+import Chatbot from "./components/Chatbot";
 
 
 function App() {
@@ -14,8 +15,11 @@ function App() {
       <Router>
         <AppHeader />
           <Routes>
+
               <Route path="/" element={<CategoryBookListItem />} />
               <Route path="/categories" element={<CategoryBookListItem />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/chatbot" element={<Chatbot />} />
               <Route path="*" element={<div>Page Not Found</div>} />
           </Routes>
 
