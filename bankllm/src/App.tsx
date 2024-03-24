@@ -14,7 +14,7 @@ function App() {
       <Router>
         <AppHeader />
           <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<CategoryBookListItem />} />
               <Route path="/categories" element={<CategoryBookListItem />} />
               <Route path="*" element={<div>Page Not Found</div>} />
           </Routes>
