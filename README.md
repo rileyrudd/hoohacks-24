@@ -14,8 +14,8 @@ While this project was done for a hack-a-thon submission, we believe this techno
 
 ## Technologies Used
 - Frontend: HTML, CSS, React, Axios
-- Backend: Node.js
-- Database: 
+- Backend: Node.js [frontend host], Python, FastAPI
+- Database: MongoDB
 
 
 
