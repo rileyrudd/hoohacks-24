@@ -20,7 +20,7 @@ function AppHeader(){
             </section>
             <section id="rightHeader">
                 <Link to="/chatbot">
-                    <button className="button categories-button">Talk to my Money</button>
+                    <button className="button categories-button">TalkMoney</button>
                 </Link>
                 <div className="header-dropdown">
                     <HeaderDropdown/>

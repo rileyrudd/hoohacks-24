@@ -25,6 +25,7 @@ export const categoryList = [
 
 ];
 
+
 export const bookList = [
   {
     bookId: 1005,
@@ -104,3 +105,17 @@ export const bookList = [
     isReadNow: true,
   },
 ];
+
+export const chatbotdata = [
+  {
+    "id": 1,
+    "text": "Hello! How can I help you?",
+    "sender": "bot"
+  },
+  {
+    "id": 2,
+    "text": "What is your financial goal?",
+    "sender": "bot"
+  },
+  // Add more messages as needed
+]
