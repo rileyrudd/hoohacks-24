@@ -1,6 +1,5 @@
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
-import Home from './components/Home'
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,7 +17,7 @@ function App() {
 
               <Route path="/" element={<CategoryBookListItem />} />
               <Route path="/categories" element={<CategoryBookListItem />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<CategoryBookListItem />} />
               <Route path="/chatbot" element={<Chatbot />} />
               <Route path="*" element={<div>Page Not Found</div>} />
           </Routes>
