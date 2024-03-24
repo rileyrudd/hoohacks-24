@@ -1,0 +1,33 @@
+footer {
+    background: var(--secondary-background-color);
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.footer-links,
+.social-media-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-link{
+    margin-left: 1.5em
+
+}
+
+.social-media-link{
+    margin-left: 1.5em;
+}
+
+.social-media-icons {
+    text-align: center;
+    gap: 0.25em;
+}
+
+
+
+

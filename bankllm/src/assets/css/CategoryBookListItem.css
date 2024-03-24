@@ -1,0 +1,43 @@
+#book-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    gap: 1em;
+}
+
+.category-book-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-background-color);
+    padding: 1em;
+    gap: 0.25em;
+    max-width: 200px;
+}
+
+.book-title {
+    font-weight: bold;
+}
+
+.book-author {
+    font-style: italic;
+}
+
+.book-image{
+    position: relative;
+
+
+}
+
+#read-now{
+    position: absolute;
+}
+
+#read-button{
+    font-size: 10px;
+    border-radius: 50%;
+}
