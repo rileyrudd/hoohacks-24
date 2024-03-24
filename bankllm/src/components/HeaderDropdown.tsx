@@ -8,7 +8,7 @@ function HeaderDropdown() {
   return (
 
       <div className="header-dropdown">
-        <button className="button categories-button">Categories</button>
+        <button className="button categories-button">Jane Eyre</button>
         <ul>
          {categoryList.map((item) =>    <li>
              <Link to ="/categories">

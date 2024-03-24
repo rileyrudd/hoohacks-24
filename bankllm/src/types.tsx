@@ -18,12 +18,10 @@ export interface CategoryItem {
 }
 
 export const categoryList = [
-  { categoryId: 1001, name: "Bestsellers" },
-  { categoryId: 1002, name: "Classics" },
-  { categoryId: 1003, name: "Fantasy" },
-  { categoryId: 1004, name: "Mystery" },
-  { categoryId: 1005, name: "Romance" },
-  { categoryId: 1006, name: "Self-Help" },
+  { categoryId: 1001, name: "Profile" },
+  { categoryId: 1002, name: "Alerts" },
+  { categoryId: 1003, name: "Security" },
+  { categoryId: 1004, name: "Support" },
 
 ];
 

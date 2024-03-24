@@ -24,11 +24,11 @@
     --default-text-color: #111;
     --neutral-color: #B4761A;
 
-    --primary-color: #EEB462;
-    --primary-color-dark: #B4761A;
-    --primary-background-color: #F1EDE9;
-    --secondary-background-color: #2D6A4F;
-    --card-background-color: navajowhite;
+    --primary-color: #0276b1;
+    --primary-color-dark: #0585cc;
+    --primary-background-color: #eae7e9;
+    --secondary-background-color: #f4f4f4;
+    --card-background-color: #0a4766;
 }
 
 /* RESET */
