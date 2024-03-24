@@ -11,9 +11,12 @@ function Chatbot(){
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: 'https://hoohacks24.free.beeceptor.com/advise',
+        url: 'https://29d3-199-111-219-105.ngrok-free.app/advise',
         headers: { }
     };
+
+    const [initialMessages, setInitialMessages] = useState(""); // State to store initial messages
+
 
     axios.request(config)
         .then((response) => {
@@ -23,24 +26,17 @@ function Chatbot(){
             console.log(error);
         });
 
-        // const [messages, setMessages] = useState([]);
-        //
-        // useEffect(() => {
-        //     // Define function to fetch messages from API
-        //     const fetchMessages = async () => {
-        //         try {
-        //             // Make GET request to API endpoint
-        //             const response = await axios.get('/api/messages');
-        //             // Update state with messages received from the API
-        //             setMessages(response.data.messages);
-        //         } catch (error) {
-        //             console.error('Error fetching messages:', error);
-        //         }
-        //     };
+    useEffect(() => {
+        // Make API request to fetch initial messages
+        axios.get('https://29d3-199-111-219-105.ngrok-free.app/advise')
+            .then(response => {
+                setInitialMessages(response.data); // Store initial messages in state
+            })
+            .catch(error => {
+                console.error('Error fetching initial messages:', error);
+            });
+    }, []);
 
-            // Call fetchMessages function when component mounts
-        //     fetchMessages();
-        // }, []); // Run only once when component mounts
 
 
     return(
@@ -51,12 +47,21 @@ function Chatbot(){
                 </div>
                 <div className="chat-messages" id="chatMessages">
                     {/*<div className="chat-messages" id="chatMessages">*/}
-                    {/*    {messages.map((message, index) => (*/}
-                    {/*        <div key={index} className={message.sender === 'bot' ? 'bot-message' : 'user-message'}>*/}
-                    {/*            {message.text}*/}
-                    {/*        </div>*/}
-                    {/*    ))}*/}
+                    {/*    /!* Render initial messages *!/*/}
+                    {/*    {initialMessages && (*/}
+                    {/*        <>*/}
+                    {/*            <div className="bot-message">{initialMessages['insights']}</div>*/}
+                    {/*            <div className="bot-message">{initialMessages['financial health']}</div>*/}
+                    {/*            <div className="bot-message">{initialMessages['recommendation']}</div>*/}
+                    {/*        </>*/}
+                    {/*    )}*/}
                     {/*</div>*/}
+                    <div className="chat-messages" id="chatMessages">
+                        {/* Render initial messages */}
+                        {initialMessages && (
+                            <pre className="bot-message">{JSON.stringify(initialMessages, null, 2)}</pre>
+                        )}
+                    </div>
                 </div>
                 <div className="input-container">
                     <input type="text" className="input-box" id="userInput" placeholder="Let's talk money..."/>
