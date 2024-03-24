@@ -44,6 +44,22 @@ function Chatbot(){
             });
     }, []);
 
+    const handleSendMessage = () => {
+        const userInput = document.getElementById("userInput") as HTMLInputElement;
+        const message = userInput.value.trim();
+        if (message !== "") {
+            const chatMessages = document.getElementById("chatMessages");
+            if (chatMessages) {
+                const userMessageElement = document.createElement("div");
+                userMessageElement.classList.add("user-message");
+                userMessageElement.textContent = message;
+                chatMessages.appendChild(userMessageElement);
+            }
+            // Clear the input box after sending the message
+            userInput.value = "";
+        }
+    };
+
 
 
     return(
@@ -57,11 +73,11 @@ function Chatbot(){
                         {/* Render initial messages */}
                         {initialMessages && (
                             <>
-                                <div className="bot-message"><strong>Insights:</strong> {initialMessages.insights}</div>
-                                <div className="bot-message"><strong>Financial
-                                    Health:</strong> {initialMessages['financial health']}</div>
+                                <div className="bot-message">Here's some insights about your money - {initialMessages.insights}</div>
+                                <div className="bot-message">Currently, your financial
+                                    health is {initialMessages['financial health']}</div>
                                 <div className="bot-message">
-                                    <strong>Recommendation:</strong> {initialMessages.recommendation}</div>
+                                    My recommendation to you would be - {initialMessages.recommendation}</div>
                             </>
                         )}
                     </div>
@@ -69,7 +85,7 @@ function Chatbot(){
                 </div>
                 <div className="input-container">
                     <input type="text" className="input-box" id="userInput" placeholder="Let's talk money..."/>
-                    <button className="send-button" id="sendMessage">Send</button>
+                    <button className="send-button" id="sendMessage" onClick={handleSendMessage}>Send</button>
                 </div>
             </div>
         </>
